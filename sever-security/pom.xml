@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>server</artifactId>
+    <artifactId>sever-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>server</name>
+    <name>sever-security</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -32,7 +32,8 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka -->
@@ -42,16 +43,16 @@
             <version>1.4.5.RELEASE</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+        <!-- 停止springboot项目 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>1.5.14.RELEASE</version>
         </dependency>
 
+        <!-- 安全验证 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-client -->
@@ -60,7 +61,6 @@
             <artifactId>spring-cloud-config-client</artifactId>
             <version>1.4.4.RELEASE</version>
         </dependency>
-
 
     </dependencies>
 

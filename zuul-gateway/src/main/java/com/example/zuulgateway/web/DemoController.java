@@ -18,7 +18,7 @@ public class DemoController {
     RefreshRouteService refreshRouteService;
 
     @RequestMapping("/refreshRoute")
-    public String refreshRoute(){
+    public String refreshRoute() {
         refreshRouteService.refreshRoute();
         return "refreshRoute";
     }
@@ -27,15 +27,14 @@ public class DemoController {
     ZuulHandlerMapping zuulHandlerMapping;
 
     @RequestMapping("/watchNowRoute")
-    public String watchNowRoute(){
+    public String watchNowRoute() {
         //可以用debug模式看里面具体是什么
         Map<String, Object> handlerMap = zuulHandlerMapping.getHandlerMap();
-        for(String key :handlerMap.keySet()){
-            System.out.println(key+":"+handlerMap.get(key));
+        for (String key : handlerMap.keySet()) {
+            System.out.println(key + ":" + handlerMap.get(key));
         }
         return "watchNowRoute";
     }
-
 
 
 }

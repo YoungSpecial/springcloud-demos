@@ -25,14 +25,14 @@ public class CustomRouteLocator extends SimpleRouteLocator implements Refreshabl
 
     private ZuulProperties properties;
 
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     public CustomRouteLocator(String servletPath, ZuulProperties properties) {
         super(servletPath, properties);
         this.properties = properties;
-        logger.info("servletPath:{}",servletPath);
+        logger.info("servletPath:{}", servletPath);
     }
 
     //父类已经提供了这个方法，这里写出来只是为了说明这一个方法很重要！！！
@@ -73,21 +73,21 @@ public class CustomRouteLocator extends SimpleRouteLocator implements Refreshabl
         return values;
     }
 
-    private Map<String, ZuulRoute> locateRoutesFromDB(){
+    private Map<String, ZuulRoute> locateRoutesFromDB() {
         Map<String, ZuulRoute> routes = new LinkedHashMap<>();
-        List<ZuulRouteVO> results = jdbcTemplate.query("select * from gateway_api_define where enabled = 1 ",new BeanPropertyRowMapper<>(ZuulRouteVO.class));
+        List<ZuulRouteVO> results = jdbcTemplate.query("select * from gateway_api_define where enabled = 1 ", new BeanPropertyRowMapper<>(ZuulRouteVO.class));
         for (ZuulRouteVO result : results) {
-            if(StringUtils.isEmpty(result.getPath()) ||
-                    (StringUtils.isEmpty(result.getUrl()) && StringUtils.isEmpty(result.getServiceId()))  ){
+            if (StringUtils.isEmpty(result.getPath()) ||
+                    (StringUtils.isEmpty(result.getUrl()) && StringUtils.isEmpty(result.getServiceId()))) {
                 continue;
             }
             ZuulRoute zuulRoute = new ZuulRoute();
             try {
-                org.springframework.beans.BeanUtils.copyProperties(result,zuulRoute);
+                org.springframework.beans.BeanUtils.copyProperties(result, zuulRoute);
             } catch (Exception e) {
-                logger.error("=============load zuul route info from db with error==============",e);
+                logger.error("=============load zuul route info from db with error==============", e);
             }
-            routes.put(zuulRoute.getPath(),zuulRoute);
+            routes.put(zuulRoute.getPath(), zuulRoute);
         }
         return routes;
     }

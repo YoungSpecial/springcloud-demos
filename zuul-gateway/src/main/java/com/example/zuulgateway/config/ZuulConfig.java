@@ -25,4 +25,14 @@ public class ZuulConfig {
         return routeLocator;
     }
 
+    /**
+     * 加载过滤器
+     *
+     * @return
+     */
+    @Bean
+    public AccessTokenFilter accessFilter() {
+        return new AccessTokenFilter();
+    }
+
 }

@@ -1,0 +1,32 @@
+
+server:
+  port: 9999
+spring:
+  application:
+    name: zuul-gateway
+  datasource:
+    url: jdbc:oracle:thin:@10.73.18.177:1521:jxxyw01
+    username: jxzmccos
+    password: soccmzxj_2010
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+zuul:
+  ignored-services: '*'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+
+#目的：防止服务重启后，第一次访问超时
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+          strategy: SEMAPHORE #Request请求头设置token
+
+
+
+
+
+

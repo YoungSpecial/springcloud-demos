@@ -1,0 +1,51 @@
+server:
+  port: 8811
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    prefer-ip-address: true  # 使用ip地址注册到eureka server
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port} # 在eureka server中看到的status显示为具体的ip地址和port
+
+spring:
+  application:
+    name: server-security
+  cloud:
+    config:
+#      uri: http://localhost:7777
+      profile: dev
+      discovery:
+        service-id: config-server
+        enabled: true
+
+
+# 日志输出
+logging:
+  file: log-tms-eureka1/logger.log
+  level:
+    org.springframework.web: DEBUG
+
+# 关闭程序
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: true
+
+# 关闭项目的安全验证
+security:
+  user:
+    name: admin
+    password: admin
+    role: SUPERUSER
+
+# 配置关闭程序的路径
+management:
+  context-path: /tms-eureka
+  security:
+    roles: SUPERUSER #角色
+  port: 8761 # 指定端口
+  address: 127.0.01 # 指定地址
+
+

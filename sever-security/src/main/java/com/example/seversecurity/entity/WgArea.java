@@ -1,4 +1,4 @@
-package com.example.server.entity;
+package com.example.seversecurity.entity;
 
 import java.util.Date;
 
