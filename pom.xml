@@ -12,6 +12,9 @@
     <modules>
         <module>server</module>
         <module>config-server</module>
+        <module>eureka-server</module>
+        <module>server2</module>
+        <module>zuul-gateway</module>
     </modules>
 
 
