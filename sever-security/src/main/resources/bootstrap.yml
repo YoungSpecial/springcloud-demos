@@ -12,13 +12,13 @@ eureka:
 spring:
   application:
     name: server-security
-  cloud:
-    config:
-#      uri: http://localhost:7777
-      profile: dev
-      discovery:
-        service-id: config-server
-        enabled: true
+#  cloud:
+#    config:
+##      uri: http://localhost:7777
+#      profile: dev
+#      discovery:
+#        service-id: config-server
+#        enabled: true
 
 
 # 日志输出
@@ -39,6 +39,8 @@ security:
     name: admin
     password: admin
     role: SUPERUSER
+  basic:
+    enabled: false
 
 # 配置关闭程序的路径
 management:

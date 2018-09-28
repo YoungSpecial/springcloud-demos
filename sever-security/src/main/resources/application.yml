@@ -1,0 +1,11 @@
+#datasource config
+jdbc:
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@10.73.18.177:1521:jxxyw01
+  username: jxzmccos
+  password: soccmzxj_2010
+
+#mybatis config
+mybatis:
+  typeAliasesPackage: com.example.seversecurity.entity
+  mapperLocations: classpath:mapper/*.xml
