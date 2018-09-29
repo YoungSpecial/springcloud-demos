@@ -16,5 +16,19 @@ public class HomeController {
         return "home";
     }
 
+    @RequestMapping("/admin")
+    public String admin(Model model){
+        Msg msg =  new Msg("Admin页面","Admin页面","额外信息，只对管理员显示");
+        model.addAttribute("msg", msg);
+        return "admin";
+    }
+
+    @RequestMapping("/admin/foo")
+    public String foo(Model model){
+        Msg msg =  new Msg("AdminFoo页面","Admin页面","额外信息，只对管理员显示");
+        model.addAttribute("msg", msg);
+        return "admin";
+    }
+
 
 }

@@ -30,6 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/css/**").permitAll()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
+                .antMatchers("/admin/*").hasRole("ss")
                 .and()
                 .formLogin()
                 .loginPage("/login")

@@ -44,9 +44,6 @@ body {
           <div sec:authorize="hasRole('ROLE_ADMIN')"> <!-- 用户类型为ROLE_ADMIN 显示 -->
               <p class="bg-info">恭喜您,您有 ROLE_ADMIN 权限 </p>
           </div>
-          <div sec:authorize-url="/admin/foo">
-              can see /admin
-          </div>
 
           <form th:action="@{/logout}" method="post">
             <input type="submit" class="btn btn-primary" value="注销"/>
