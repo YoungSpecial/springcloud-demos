@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>server-security</artifactId>
+    <artifactId>springcloud-demos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -17,6 +17,9 @@
         <module>server</module>
         <module>server2</module>
         <module>zuul-gateway</module>
+        <module>server-mybatis</module>
+        <module>sever-security</module>
+        <module>springcloud-auth</module>
     </modules>
 
 

@@ -14,7 +14,7 @@ spring:
     name: server
   cloud:
     config:
-#      uri: http://localhost:7777
+      uri: http://localhost:7777
       profile: dev
       discovery:
         service-id: config-server

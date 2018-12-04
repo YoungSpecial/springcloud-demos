@@ -1,0 +1,23 @@
+
+server:
+  port: 6666
+spring:
+  application:
+    name: springcloud-auth
+  datasource:
+    url: jdbc:oracle:thin:@10.73.18.177:1521:jxxyw01
+    username: jxzmccos
+    password: soccmzxj_2010
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+
+
+
+
+
+
+

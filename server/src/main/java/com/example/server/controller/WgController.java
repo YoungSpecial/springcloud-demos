@@ -13,13 +13,13 @@ import java.util.List;
 @RequestMapping("/wg")
 public class WgController {
 
-//    @Autowired
-//    JdbcTemplate jdbcTemplate;
-//
-//    @RequestMapping("/getWgs")
-//    private List<WgArea> getWgAreas(){
-//        List<WgArea> results = jdbcTemplate.query("select * from wg_area where area_level=3 ",new BeanPropertyRowMapper<>(WgArea.class));
-//        return results;
-//    }
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    @RequestMapping("/getWgs")
+    private List<WgArea> getWgAreas(){
+        List<WgArea> results = jdbcTemplate.query("select * from wg_area where area_level=3 ",new BeanPropertyRowMapper<>(WgArea.class));
+        return results;
+    }
 
 }
